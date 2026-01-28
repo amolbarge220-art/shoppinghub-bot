@@ -34,8 +34,3 @@ def fetch_and_post():
 scheduler = BlockingScheduler()
 scheduler.add_job(fetch_and_post, "interval", minutes=60)
 scheduler.start()
-
-
-python-telegram-bot==13.15
-requests
-apscheduler
