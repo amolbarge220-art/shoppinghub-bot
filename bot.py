@@ -5,9 +5,9 @@ from telegram import Bot
 from apscheduler.schedulers.background import BackgroundScheduler
 
 # ====== CONFIG ======
-BOT_TOKEN = "8435541866:AAHf9HMgkVh6wTZWtPnhfeCrU0z5QQXcXq8"
-CHANNEL = "@shoppinghubsmart"
-EARNKARO_API = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTc5ZDI1YTA2MjRiMzJhNTc1ZjNhNjIiLCJlYXJua2FybyI6IjI5NjU3NTciLCJpYXQiOjE3Njk1OTMxOTl9.ROdW9fFWeftXZiXJqv42eJhTxB7oKUJGOKKPbtSMJFE"
+BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"
+CHANNEL = "@YourChannelUsername"
+EARNKARO_API = "YOUR_EARNKARO_API_KEY"
 
 bot = Bot(token=BOT_TOKEN)
 
@@ -47,3 +47,18 @@ print("🤖 Bot started successfully")
 # ====== KEEP APP ALIVE (IMPORTANT FOR RENDER) ======
 while True:
     time.sleep(60)
+
+
+from flask import Flask
+import threading
+
+app = Flask(name)
+
+@app.route("/")
+def home():
+    return "Bot is running"
+
+def run_web():
+    app.run(host="0.0.0.0", port=10000)
+
+threading.Thread(target=run_web).start()
